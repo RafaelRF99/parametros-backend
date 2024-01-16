@@ -46,6 +46,13 @@ class Ygcontroller {
             raio,
             tipo,
             gravacao,
+            atrasarAvanco,
+            atrasarLeituraEspelho,
+            p1,
+            rvm,
+            rvmRaio,
+            rvmMin,
+            rvmMax,
             createAt
         } = req.body;
 
@@ -97,6 +104,13 @@ class Ygcontroller {
                 raio,
                 tipo,
                 gravacao,
+                atrasarAvanco,
+                atrasarLeituraEspelho,
+                p1,
+                rvm,
+                rvmRaio,
+                rvmMin,
+                rvmMax,
                 createAt
             });
             return res.json(parametro);

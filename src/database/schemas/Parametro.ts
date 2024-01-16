@@ -117,8 +117,49 @@ const parametro = new mongoose.Schema({
   atrasarLeituraEspelho: {
     type: String,
   },
+  p1: [
+    {
+      a1: {
+        type: String,
+      },
+      a2: {
+        type: String,
+      },
+      a3: {
+        type: String,
+      },
+      a4: {
+        type: String,
+      },
+      b1: {
+        type: String,
+      },
+      b2: {
+        type: String,
+      },
+      b3: {
+        type: String,
+      },
+      b4: {
+        type: String,
+      },
+    },
+  ],
+  
   // NJ
 
+  rvm: {
+    type: Boolean,
+  },
+  rvmRaio: {
+    type: String,
+  },
+  rvmMin: {
+    type: String,
+  },
+  rvmMax: {
+    type: String,
+  },
   createAt: {
     type: Date,
     default: Date.now,
