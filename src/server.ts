@@ -19,7 +19,7 @@ const pass = process.env['PASS'];
 app.use(routes)
 
 // Rodar Backend
-app.listen(+port, "0.0.0.", function() {
+app.listen(+port, "0.0.0.0", function() {
   console.log('Backend rodando...');
 });
 
