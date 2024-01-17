@@ -57,7 +57,8 @@ class Ygcontroller {
         } = req.body;
 
         try {
-            const partNumberExists = await Parametro.findOne({ partNumber });
+            const existingParametro = await Parametro.findOne({ partNumber, linha });
+
 
             if (!partNumber || !linha || !nomeProgramaCorte || !maquina || !createAt) {
                 return res.status(400).json({
@@ -66,10 +67,10 @@ class Ygcontroller {
                 })
             }
 
-            if (partNumberExists) {
+            if (existingParametro) {
                 return res.status(400).json({
-                    error: "Algo de errado aconteceu",
-                    message: "Parâmetro já existe!"
+                    error: "Parametro já existe",
+                    message: "Um Parametro com o mesmo partNumber e linha já existe no banco de dados."
                 });
             }
 

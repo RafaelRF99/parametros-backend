@@ -4,7 +4,6 @@ const parametro = new mongoose.Schema({
   partNumber: {
     type: String,
     require: true,
-    unique: true,
     lowerCase: true,
   },
   linha: {
