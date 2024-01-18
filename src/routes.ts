@@ -1,3 +1,4 @@
+import ValidationJWT from "./controller/ValidationJWT";
 import Parametro from "./controller/Parametrocontroller";
 import UserAdmin from "./controller/UserAdmin";
 
@@ -10,7 +11,8 @@ routes.post("/parametro", Parametro.create);
 routes.put("/parametro/:id", Parametro.edit);
 routes.delete("/parametro/:id", Parametro.delete);
 
-routes.post("/admin", UserAdmin.valid);
+routes.post("/admin", ValidationJWT.valid)
+routes.post("/admin/create", UserAdmin.create)
 
 
 
