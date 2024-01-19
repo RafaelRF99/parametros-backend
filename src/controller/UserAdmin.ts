@@ -1,8 +1,6 @@
+import bcrypt from 'bcryptjs'
 import Admin from '../database/schemas/Admin';
 import { Request, Response, NextFunction  } from 'express';
-import jwt from 'jsonwebtoken';
-
-const SECRET = '123';
 
 class UserAdmin {
 
@@ -19,9 +17,11 @@ class UserAdmin {
         }
 
         try {
+            const hashedPassword = await bcrypt.hash(password, 10)
+
             const user = await Admin.create({
                 email,
-                password
+                password: hashedPassword
             })
 
             return res.json(user);
