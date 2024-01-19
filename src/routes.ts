@@ -6,10 +6,10 @@ import { Router } from "express";
 
 const routes = Router();
 
-routes.get("/parametro", Parametro.getAll);
-routes.post("/parametro", Parametro.create);
-routes.put("/parametro/:id", Parametro.edit);
-routes.delete("/parametro/:id", Parametro.delete);
+routes.get("/parametro", ValidationJWT.verifyJWT, Parametro.getAll);
+routes.post("/parametro", ValidationJWT.verifyJWT, Parametro.create);
+routes.put("/parametro/:id", ValidationJWT.verifyJWT, Parametro.edit);
+routes.delete("/parametro/:id", ValidationJWT.verifyJWT, Parametro.delete);
 
 routes.post("/admin", ValidationJWT.valid)
 routes.post("/admin/create", UserAdmin.create)
