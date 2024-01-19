@@ -53,14 +53,13 @@ class Ygcontroller {
             rvmRaio,
             rvmMin,
             rvmMax,
-            createAt
         } = req.body;
 
         try {
             const existingParametro = await Parametro.findOne({ partNumber, linha });
 
 
-            if (!partNumber || !linha || !nomeProgramaCorte || !maquina || !createAt) {
+            if (!partNumber || !linha || !nomeProgramaCorte || !maquina) {
                 return res.status(400).json({
                     error: "Informações inválidas enviadas",
                     message: "Algum valor não foi identificado"
@@ -112,7 +111,6 @@ class Ygcontroller {
                 rvmRaio,
                 rvmMin,
                 rvmMax,
-                createAt
             });
             return res.json(parametro);
 
