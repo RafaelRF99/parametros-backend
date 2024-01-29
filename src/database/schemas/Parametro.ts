@@ -144,6 +144,47 @@ const parametro = new mongoose.Schema({
       },
     },
   ],
+
+  
+  p2: [
+    {
+      s1: {
+        type: String,
+      },
+      s2: {
+        type: String,
+      },
+      s3: {
+        type: String,
+      },
+      s4: {
+        type: String,
+      },
+      s5: {
+        type: String,
+      },
+    },
+  ],
+
+  p3: [
+    {
+      s1: {
+        type: String,
+      },
+      s2: {
+        type: String,
+      },
+      s3: {
+        type: String,
+      },
+      s4: {
+        type: String,
+      },
+      s5: {
+        type: String,
+      },
+    },
+  ],
   
   // NJ
 
