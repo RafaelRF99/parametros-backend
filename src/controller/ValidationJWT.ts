@@ -33,7 +33,7 @@ class ValidationJWT {
             return res.status(401).send({ auth: false, message: 'E-mail ou senha inválidos.' });
           }
     
-          const token = jwt.sign({ userId: user._id }, SECRET, { expiresIn: '1h' });
+          const token = jwt.sign({ userId: user._id }, SECRET, { expiresIn: '1d' });
     
           return res.json({ auth: true, token });
         } catch (error) {
